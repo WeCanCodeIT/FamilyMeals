@@ -33,21 +33,41 @@ namespace FamilyMeals
             Console.WriteLine();
             Console.WriteLine($"I just want {dinnersForWeek[4]}!!");
             Console.WriteLine("(Push any key to clear the console)");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("Console cleared. Push Enter to print dinner for the week!\n");
 
             // pause - listens for keystroke
             Console.ReadKey();
 
-            // clears console
-            Console.Clear();
-            Console.WriteLine("Push enter to continue!");
-            Console.ReadLine();
+            // Console.WriteLine("Push enter to print dinner for the week!");
+            // Console.ReadLine();
 
-            foreach (var item in dinnersForWeek)
+            //foreach (var item in dinnersForWeek)
+            //{
+            //    Console.WriteLine("\nI just want " + item);
+            //}
+
+            // Same as above foreach loop
+            for (int i = 0; i < dinnersForWeek.Length; i++)
             {
-                Console.WriteLine("\nI just want " + item);
+                string dinner = dinnersForWeek[i];
+                Console.WriteLine(dinner);
             }
 
-            Console.WriteLine("\nPush enter to continue!");
+            Console.ReadKey();
+            Console.Clear();
+            Console.WriteLine("Console cleared. Push Enter to do it in reverse!\n");
+            Console.ReadLine();
+
+            // Go through it backwards
+            for (int i = dinnersForWeek.Length - 1; i >= 0; i--)
+            {
+                string dinner = dinnersForWeek[i];
+                Console.WriteLine(dinner);
+            }
+
+            Console.WriteLine("\nPush enter to print the same array!");
             Console.ReadKey();
             Console.Clear();
 
@@ -64,11 +84,13 @@ namespace FamilyMeals
             Console.ReadKey();
             Console.Clear();
 
-            Console.WriteLine("This array is " + dinnerForWeek.Length + " items long.");
-
+            Console.WriteLine("This array is " + dinnerForWeek.Length + " items long. Push Enter!");
+            Console.ReadKey();
+            Console.Clear();
 
             Console.WriteLine("\nPush enter to print the new shorter array!\n");
             Console.ReadKey();
+            Console.Clear();
 
             dinnerForWeek = new string[2];
             dinnerForWeek[0] = "wings";
@@ -76,13 +98,14 @@ namespace FamilyMeals
 
             foreach (var item in dinnerForWeek)
             {
-                Console.WriteLine("When all else fails, there's always " + item);
+                Console.WriteLine(item);
             }
 
-            Console.WriteLine("\nPush enter to jump to Lists!\n");
+            Console.WriteLine("\nPush enter to print a List!\n");
             Console.ReadKey();
+            Console.Clear();
 
-            // Lists
+            // Initialize and assign new List
 
             List<int> listOfInts = new List<int>
             {
@@ -91,6 +114,7 @@ namespace FamilyMeals
                 300
             };
 
+            // Prints list
             foreach (var item in listOfInts)
             {
                 Console.WriteLine(item);
@@ -98,7 +122,9 @@ namespace FamilyMeals
 
             Console.WriteLine("\nPush enter to insert 150!\n");
             Console.ReadKey();
+            Console.Clear();
 
+            // Inserts 150 in element 1 position
             listOfInts.Insert(1, 150);
 
             foreach (var item in listOfInts)
@@ -106,27 +132,94 @@ namespace FamilyMeals
                 Console.WriteLine(item);
             }
 
+            Console.WriteLine("\nPush enter to add 400 to end of list!\n");
+            Console.ReadKey();
+            Console.Clear();
 
+            // Adds 400 to end of list
+            listOfInts.Add(400);
 
-            //for (var i = 0; i <= 7; i++)
-            //{
-            //    Console.WriteLine();
+            foreach (var item in listOfInts)
+            {
+                Console.WriteLine(item);
+            }
 
-            //}
+            Console.WriteLine("\nPush enter to remove element 3!\n");
+            Console.ReadKey();
+            Console.Clear();
 
-            // Lists
+            // removes element 3
+            listOfInts.RemoveAt(3);
 
+            foreach (var item in listOfInts)
+            {
+                Console.WriteLine(item);
+            }
 
+            // removes value from list
+            Console.WriteLine("\nPush enter to remove the value of 400!\n");
+            Console.ReadKey();
+            Console.Clear();
 
+            listOfInts.Remove(400);
 
+            foreach (var item in listOfInts)
+            {
+                Console.WriteLine(item);
+            }
 
+            Console.WriteLine("\n400 gone! Push enter!\n");
+            Console.ReadKey();
+            Console.Clear();
 
-            // Dictionaries
+            foreach (var item in listOfInts)
+            {
+                Console.WriteLine(item);
+            }
 
+            Console.WriteLine("\nErase this whole list - push enter!");
+            Console.ReadKey();
+            Console.Clear();
 
+            // erases list elements
+            listOfInts.Clear();
 
+            foreach (var item in listOfInts)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("\nList empty! Press Enter to put 400 back.");
+            Console.ReadKey();
+            Console.Clear();
 
+            // 400 added to list
+            listOfInts.Add(400);
 
+            foreach (var item in listOfInts)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("\n400 back. Press Enter to print our Dictionary contents!\n");
+            Console.ReadKey();
+            Console.Clear();
+            // Initialize and assign elements in a Dictionary
+
+            Console.WriteLine("\nHere's our phonebook!\n");
+
+            Dictionary<string, int> phoneBook = new Dictionary<string, int>
+            {
+                { "Bill Gates", 5551212 },
+                { "Mark Zuckerberg", 8651212 }
+            };
+
+            foreach (var item in phoneBook)
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.ReadKey();
+            Console.Clear();
 
 
         }
